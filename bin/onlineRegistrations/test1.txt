@@ -1,0 +1,73 @@
+Objective:
+
+Create an online student registration system that allows students to register for different courses concurrently. The system should handle course availability and ensure that students are not registered for full courses.
+
+
+
+Instructions:
+
+
+
+* Define a Course class with the following properties:
+
+
+
+-> private String courseName: The name of the course.
+
+-> private int availableSeats: The number of available seats in the course.
+
+-> Implement a constructor for the Course class that takes in the course name and the number of available seats and initializes the class properties.
+
+-> Provide getter and setter methods for courseName and availableSeats.
+
+-> Implement a synchronized method registerStudent() within the Course class that allows students to register for the course. If there are available seats, decrement the availableSeats count and return true, indicating successful registration. Otherwise, return false.
+
+
+
+* Define a Student class with the following properties:
+
+
+
+-> private String studentName: The name of the student.
+
+-> private Course course: The course the student is trying to register for.
+
+-> Implement a constructor for the Student class that takes in the student's name and initializes the class property.
+
+-> Implement a setter method setCourse(Course course) in the Student class to assign a course to the student.
+
+-> Create a registerForCourse() method within the Student class that allows the student to register for the assigned course. Use a synchronized block to ensure that multiple students do not register for the same course simultaneously.
+
+-> If the registration is successful, print a message indicating that the student has successfully registered for the course. Otherwise, print a message indicating that the course is full and the student could not register.
+
+
+
+* In the OnlineStudentRegistrationSystem class:
+
+
+
+-> Create three Course objects: "Math", "English", and "Science", each with 5 available seats.
+
+-> Create five Student objects: 
+
+-> Assign each student to the appropriate course using the setCourse() method.
+
+-> Create five threads, one for each student, and register them for their respective courses concurrently.
+
+
+
+Sample Output :
+
+Raj successfully registered for Science course.
+
+Amit successfully registered for Math course.
+
+Sarah successfully registered for English course.
+
+Alex successfully registered for Science course.
+
+Emily successfully registered for Math course.
+
+
+
+
